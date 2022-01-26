@@ -1,0 +1,355 @@
+//variables
+$bg-color: #000;
+$text-color: #fff;
+$first-letter: #ff0000;
+$link-color: #c00410;
+
+//mixins
+@mixin headers-font($size, $transform) {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: $size;
+    text-transform: $transform;
+}
+
+@mixin img-left-right {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    padding: 0 !important;
+}
+
+@mixin text-left-right {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    padding: 3%;
+}
+
+@mixin img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin custom-button($btn-width) {
+    width: $btn-width;
+    color: white;
+    background: transparent;
+    border: 1px solid $text-color;
+    padding: 2px;
+    cursor: pointer;
+}
+
+
+
+* {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $bg-color;
+    color: $text-color;
+}
+
+/*================
+        HOME
+====================*/
+.container-flex {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    .nav_bar {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        z-index: 3;
+
+        .logo,
+        #hamburger {
+            margin: 3%;
+        }
+
+        #hamburger {
+            display: flex;
+            justify-content: flex-end;
+
+            .fa-bars {
+                color: $text-color;
+                width: 50px;
+                height: 50px;
+                margin-top: 15px;
+                padding-left: 50px;
+                margin-right: 20px;
+                font-size: 30px !important;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.home-text {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    h1 {
+        @include headers-font(2.5rem, none);
+        font-weight: 700;
+    }
+}
+
+span {
+    color: $first-letter;
+    text-transform: uppercase;
+}
+
+/*=====================
+          PORTFOLIO
+==========================*/
+h2 {
+    @include headers-font(2.5rem, uppercase);
+    font-weight: 700;
+}
+
+ul {
+    h5 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}
+
+h3 {
+    @include headers-font(25px, uppercase);
+}
+
+hr {
+    width: 100px;
+    background-color: $text-color;
+    margin: auto;
+}
+
+//   Carousel
+
+a {
+    color: $link-color;
+    text-decoration: underline;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    font-family: Lato-Bold, sans-serif;
+    text-align: center;
+
+    &:hover {
+        text-decoration: underline;
+        color: $link-color;
+        cursor: pointer;
+    }
+}
+
+/*======================
+      Our services
+========================*/
+.services {
+    @include headers-font(1rem, none);
+    font-weight: bold;
+    line-height: 32px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.custom-col {
+    text-align: right;
+    border-right: 1px solid $text-color;
+
+    .red-icons {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+    }
+
+    h5 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+    }
+}
+
+/*============
+'new' section
+================*/
+.container-div {
+    padding-left: 30px;
+    padding-right: 0;
+
+    .images-no-space {
+        margin-top: 50px;
+        padding: 0;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 30px;
+
+
+        .img-left {
+            @include img-left-right;
+
+            .overlay {
+                @include img-overlay;
+
+                .text1 {
+                    @include text-left-right;
+
+                    p {
+                        font-family: 'Lato', sans-serif;
+                        text-transform: none;
+                    }
+
+                    .button1 {
+                        @include custom-button(125px);
+                    }
+                }
+            }
+        }
+
+        .img-right {
+            @include img-left-right;
+
+            .overlay {
+                @include img-overlay;
+
+                .text2 {
+                    @include text-left-right;
+
+                    p {
+                        font-family: 'Lato', sans-serif;
+                        text-transform: none;
+                    }
+
+                    .title2 {
+                        text-align: left;
+                    }
+
+                    .button2 {
+                        @include custom-button(120px);
+                    }
+                }
+            }
+
+        }
+
+    }
+
+}
+
+/*=============
+    Footer
+================*/
+.container-footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    /* margin-top: 80px; */
+    margin-bottom: 20px;
+    padding: 5px;
+
+    p{
+        text-transform: uppercase;
+    }
+
+    .footer-logo-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .logo-bottom {
+            width: 160px;
+            height: 140px;
+        }
+
+        p {
+            width: auto;
+        }
+
+    }
+
+    .f-center {
+        .footer-email {
+            word-break: break-word;
+        }
+
+        .social-icons {
+            color: $text-color;
+            display: flex;
+            justify-content: space-between;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+}
+
+// Settings
+.end {
+    font-family: 'Lato', sans-serif;
+    text-transform: none;
+
+    ul {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+
+        li {
+            list-style-type: none;
+            display: inline;
+            padding: 8px;
+
+            .end-link {
+                color: rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                font-family: 'Lato', sans-serif;
+                font-size: 11px;
+
+                &:hover {
+                    color: $text-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+//   Back to top button
+#myBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 1;
+    font-size: 30px;
+    background-color: $text-color;
+    color: $bg-color;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: auto;
+    text-align: center;
+}

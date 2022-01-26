@@ -1,0 +1,178 @@
+ /* ================
+  Media Queries
+==================*/
+
+ /* Medium devices */
+
+ @media (max-width: 991px) {
+   .container-footer {
+     position: relative;
+     display: flex;
+     justify-content: space-around;
+     text-align: left;
+     /* margin-top: 80px; */
+     margin-bottom: 20px;
+     padding: 10px;
+   }
+ }
+
+ @media (max-width: 768px) {
+   h1 {
+     font-size: 2rem;
+   }
+
+   .home-text {
+     width: 60%;
+     margin-top: 40px;
+     margin-bottom: 40px;
+   }
+
+   .text1 h2 {
+     font-size: 25px;
+     word-break: normal;
+   }
+
+   .services {
+     font-size: 13px;
+     line-height: normal;
+     word-break: normal;
+   }
+
+   .f-center {
+     display: inline-block;
+     /* flex-direction: column; */
+     justify-content: space-between;
+   }
+ }
+
+ /* Small devices */
+
+ @media (min-width: 425px) and (max-width: 576px) {
+   .f-center {
+     text-align: center;
+     padding-top: 5%;
+   }
+
+   .text1 h2 {
+     font-size: 1.5rem;
+   }
+   .custom-col {
+    border-right: none;
+    text-align: center;
+  }
+ }
+
+ /* mobile */
+ @media (min-width: 340px) and (max-width: 425px) {
+   h1 {
+     font-size: 1.5rem;
+   }
+
+   .home-text {
+     width: 60%;
+     margin-top: 30px;
+     margin-bottom: 30px;
+   }
+
+   .services {
+     font-size: 10px;
+     line-height: normal;
+     padding: 0 15px;
+   }
+
+   .f-center {
+     text-align: center;
+     padding-top: 5%;
+   }
+
+   #hamburger {
+     display: flex;
+     justify-content: space-around;
+   }
+ }
+ 
+
+ @media (max-width: 393px) {
+   .home-text h1 {
+     font-size: 16px;
+     margin-top: 20px;
+     margin-bottom: 20px;
+   }
+
+   h2 {
+     font-size: 1rem;
+   }
+
+   .services {
+     font-size: 10px;
+     line-height: normal;
+     margin-bottom: 0;
+     padding: 0 15px;
+   }
+
+   .custom-col {
+     text-align: center;
+   }
+
+   .f-center {
+     text-align: center;
+     padding-top: 5%;
+   }
+
+   .container-div {
+     padding-left: 30px;
+     padding-right: 0;
+   }
+   .custom-col {
+    border-right: none;
+  }
+ }
+
+ @media (max-width: 320px) {
+   .home-text h1 {
+     font-size: 1rem;
+   }
+
+   .home-text {
+     width: 80%;
+     margin-top: 10px;
+     margin-bottom: 10px;
+   }
+
+   h2 {
+     font-size: 1rem;
+   }
+
+   .text1 h2 {
+     font-size: 1rem;
+   }
+
+   .text1 p {
+     font-size: 10px;
+   }
+
+   .text2 p {
+     font-size: 10px;
+   }
+
+   .services {
+     font-size: 10px;
+     line-height: normal;
+     margin-bottom: 0;
+     padding: 0 10px;
+   }
+
+   .f-center {
+     text-align: center;
+     padding-top: 5%;
+   }
+
+   .container-div {
+     padding-left: 30px;
+     padding-right: 0;
+   }
+
+   .custom-col {
+     border-right: none;
+   }
+ }
