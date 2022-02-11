@@ -7,7 +7,7 @@ function changeColor(){
 
 
 function myAlert(){
-  alert("This is a detailed description of this news!");
+  alert("This is a detailed description of the news!");
 }
 
 function myAlert2() {
